@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portofolio - Adinda Jati Mulia</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            dark: '#0f172a',
+            darker: '#0a0e1a',
+            accent: '#6366f1',
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+</head>
+<body class="bg-dark text-gray-300 font-sans leading-relaxed">
+  <!-- NAVBAR -->
+    <header class="bg-dark border-b border-gray-800 sticky top-0 z-50" x-data="{ open: false }">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+        <div class="text-white font-bold text-xl">Adinda.</div>
+
+        <!-- Desktop Nav -->
+        <nav class="hidden md:flex gap-8 text-sm text-gray-400">
+        <a href="#hero" class="hover:text-white transition">Home</a>
+        <a href="#services" class="hover:text-white transition">My Skills</a>
+        <a href="#portfolio" class="hover:text-white transition">Portfolio</a>
+        <a href="#testimonial" class="hover:text-white transition">Testimonial</a>
+        <a href="#contact" class="hover:text-white transition">Contact</a>
+        </nav>
+
+        <!-- Download CV (Desktop Only) -->
+        <a href="#contact" class="hidden md:inline-block px-5 py-2 bg-accent text-white text-sm font-semibold rounded-full hover:scale-105 transition">
+        Download CV
+        </a>
+
+        <!-- Hamburger Icon (Mobile) -->
+        <button @click="open = !open" class="md:hidden text-gray-400 focus:outline-none">
+        <svg x-show="!open" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+            stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+            d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+        <svg x-show="open" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+            stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+            d="M6 18L18 6M6 6l12 12" />
+        </svg>
+        </button>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div 
+    x-show="open" 
+    x-transition 
+    class="md:hidden px-6 pb-6 pt-2 text-sm text-gray-400 space-y-2 bg-dark"
+    >
+    <nav class="flex flex-col gap-2">
+        <a href="#hero" class="block hover:text-white transition">Home</a>
+        <a href="#services" class="block hover:text-white transition">My Skills</a>
+        <a href="#portfolio" class="block hover:text-white transition">Portfolio</a>
+        <a href="#testimonial" class="block hover:text-white transition">Testimonial</a>
+        <a href="#contact" class="block hover:text-white transition">Contact</a>
+    </nav>
+
+    <div class="pt-3">
+        <a 
+        href="#contact" 
+        class="inline-block px-5 py-2 bg-accent text-white text-sm font-semibold rounded-full hover:scale-105 transition"
+        >
+        Download CV
+        </a>
+    </div>
+    </div>
+
+    </header>
+
+    <!-- HERO -->
+    <section id="hero" class="bg-darker px-10 overflow-hidden">
+    <div class="max-w-7xl mx-auto px-6 py-10 mt-10 flex flex-col-reverse lg:flex-row items-center gap-16">
+        
+        <!-- Left / Text -->
+        <div class="flex-1 text-center lg:text-left">
+        <span class="text-accent uppercase tracking-wide text-sm">
+            Passionate about UI/UX and Web Development
+        </span>
+        <h1 class="text-5xl sm:text-6xl font-extrabold text-white mt-4">
+            Adinda Jati Mulia
+        </h1>
+        <p class="text-gray-400 mt-4 max-w-xl mx-auto lg:mx-0">
+            Mahasiswa UPN Jatim yang fokus mempelajari UI/UX dan Web Development.
+        </p>
+
+        <!-- Stats -->
+        <div class="flex gap-6 mt-10 justify-center lg:justify-start">
+            <div class="text-center">
+            <p class="text-3xl font-bold text-white">3+</p>
+            <p class="text-sm uppercase tracking-wider text-gray-400">UI/UX Projects</p>
+            </div>
+            <div class="text-center">
+            <p class="text-3xl font-bold text-white">5+</p>
+            <p class="text-sm uppercase tracking-wider text-gray-400">Web Prototypes</p>
+            </div>
+            <div class="text-center">
+            <p class="text-3xl font-bold text-white">1</p>
+            <p class="text-sm uppercase tracking-wider text-gray-400">Internships</p>
+            </div>
+        </div>
+
+        <!-- Social -->
+        <div class="flex gap-4 mt-8 justify-center lg:justify-start">
+            <a href="#" class="text-gray-400 hover:text-white transition">Behance</a>
+            <span class="text-gray-500">•</span>
+            <a href="#" class="text-gray-400 hover:text-white transition">Dribbble</a>
+            <span class="text-gray-500">•</span>
+            <a href="#" class="text-gray-400 hover:text-white transition">LinkedIn</a>
+            <span class="text-gray-500">•</span>
+            <a href="#" class="text-gray-400 hover:text-white transition">GitHub</a>
+        </div>
+        </div>
+
+        <!-- Right / Image -->
+        <div class="relative flex-shrink-0">
+        <!-- Glowing circle element -->
+        <div class="absolute inset-0 flex items-center justify-center -z-10">
+            <div class="w-72 h-72 rounded-full bg-purple-500 blur-3xl opacity-40"></div>
+        </div>
+        <div class="relative w-64 h-64 md:w-72 md:h-72 rounded-full overflow-hidden shadow-xl">
+            <img src="https://i.pinimg.com/originals/8a/26/1d/8a261de1f096c33dfa4b67cd8b5d798a.jpg" alt="Profil" class="w-full h-full object-cover scale-105">
+        </div>
+        </div>
+
+    </div>
+    </section>
+
+  <!-- EDUCATION TIMELINE -->
+  <section id="education" class="bg-darker py-24">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-3xl font-semibold text-white mb-12 text-center">Academic Background</h2>
+      <div class="relative border-l-4 border-accent ml-4">
+        <!-- Item 1 -->
+        <div class="mb-10 ml-6">
+          <div class="absolute w-4 h-4 bg-accent rounded-full -left-2.5 border-4 border-dark"></div>
+          <h3 class="text-xl font-bold text-white">SMK Negeri 1 Surabaya</h3>
+          <span class="text-sm text-gray-400">2018 - 2021</span>
+          <p class="text-gray-400 mt-2">Jurusan Rekayasa Perangkat Lunak, Berpengalaman membangun website dari implementasi langsung</p>
+        </div>
+        <!-- Item 2 -->
+        <div class="mb-10 ml-6">
+          <div class="absolute w-4 h-4 bg-accent rounded-full -left-2.5 border-4 border-dark"></div>
+          <h3 class="text-xl font-bold text-white">Universitas UPN Veteran Jawa Timur</h3>
+          <span class="text-sm text-gray-400">2021 - Sekarang</span>
+          <p class="text-gray-400 mt-2">Program Studi Informatika, Mendalami pengembangan web secara terstruktur mulai dari perencanaan hingga testing</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+    <!-- SERVICES -->
+    <section id="services" class="bg-darker pt-18 pb-20">
+    <div class="max-w-7xl mx-auto px-6 text-center">
+        <h2 class="text-3xl font-semibold text-white mb-12">What I Do</h2>
+
+        <div class="flex flex-wrap justify-center gap-10">
+        <!-- Card 1 -->
+        <div class="bg-dark rounded-2xl p-8 shadow-lg hover:shadow-xl transition w-full sm:w-[350px] md:w-[400px]">
+            <h3 class="text-2xl font-bold text-accent mb-3">Website Design</h3>
+            <p class="text-gray-400 text-base">Desain website modern dan responsif sesuai kebutuhan pengguna.</p>
+        </div>
+        <!-- Card 2 -->
+        <div class="bg-dark rounded-2xl p-8 shadow-lg hover:shadow-xl transition w-full sm:w-[350px] md:w-[400px]">
+            <h3 class="text-2xl font-bold text-accent mb-3">UI/UX Design</h3>
+            <p class="text-gray-400 text-base">Menciptakan pengalaman pengguna yang intuitif dan efisien untuk berbagai platform.</p>
+        </div>
+        </div>
+    </div>
+    </section>
+
+
+  <!-- my projects -->
+   <section id="portfolio" class="bg-darker py-24">
+    <div class="max-w-7xl mx-auto px-6">
+        <h2 class="text-3xl font-semibold text-white mb-12 text-center">My Projects</h2>
+
+        <div id="projectGrid" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 max-h-[1000px] overflow-hidden transition-all duration-500">
+        <!-- Project Items -->
+        <!-- Tambahkan item sebanyak yang dibutuhkan -->
+        <div class="relative group overflow-hidden rounded-xl shadow-lg">
+            <img src="img/project-1.png" alt="UI Redesign" class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-110">
+            <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition flex items-center justify-center">
+            <span class="text-white font-medium text-sm">UI Design - Travel App</span>
+            </div>
+        </div>
+        <a href="https://hybridhope.net/">
+        <div class="relative group overflow-hidden rounded-xl shadow-lg">
+            <img src="img/hybridhope.png" alt="Web Landing Page" class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-110">
+            <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition flex items-center justify-center">
+            <span class="text-white font-medium text-sm">Hybridhope</span>
+            </div>
+        </div>
+        </a>
+        <div class="relative group overflow-hidden rounded-xl shadow-lg">
+            <img src="img/freelancetrack.png" alt="Dashboard UI" class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-110">
+            <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition flex items-center justify-center">
+            <span class="text-white font-medium text-sm">freelancetrack</span>
+            </div>
+        </div>
+        <!-- Tambahkan item lainnya -->
+        <div class="relative group overflow-hidden rounded-xl shadow-lg">
+            <img src="https://via.placeholder.com/600x400" alt="E-Commerce" class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-110">
+            <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition flex items-center justify-center">
+            <span class="text-white font-medium text-sm">E-Commerce UI</span>
+            </div>
+        </div>
+        <div class="relative group overflow-hidden rounded-xl shadow-lg">
+            <img src="https://via.placeholder.com/600x400" alt="Portfolio" class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-110">
+            <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition flex items-center justify-center">
+            <span class="text-white font-medium text-sm">Personal Portfolio</span>
+            </div>
+        </div>
+        <div class="relative group overflow-hidden rounded-xl shadow-lg">
+            <img src="https://via.placeholder.com/600x400" alt="Mobile UI" class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-110">
+            <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition flex items-center justify-center">
+            <span class="text-white font-medium text-sm">Mobile Banking UI</span>
+            </div>
+        </div>
+        </div>
+
+        <!-- SEE ALL BUTTON -->
+        <div class="text-center mt-8">
+        <button id="seeAllBtn" class="text-accent border border-accent px-6 py-2 rounded-full hover:bg-accent hover:text-white transition">
+            See All
+        </button>
+        </div>
+    </div>
+    </section>
+
+    <!-- sertifikat -->
+    <section id="certificates" class="bg-darker py-24">
+    <div class="max-w-7xl mx-auto px-6">
+        <h2 class="text-3xl font-semibold text-white mb-12">Sertifikat & Pelatihan</h2>
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Certificate Card -->
+        <div class="bg-dark rounded-xl p-4 shadow-lg hover:shadow-xl transition">
+            <img src="img/FIGMA-FOR-UI-UX-DESIGNER.png" alt="Dicoding" class="w-16 h-16 mb-4">
+            <h3 class="text-lg font-bold text-accent">Figma For UI/UX Design</h3>
+            <p class="text-gray-400 text-sm">Myskill</p>
+            <p class="text-xs text-gray-500">2025</p>
+        </div>
+
+        <div class="bg-dark rounded-xl p-4 shadow-lg hover:shadow-xl transition">
+            <img src="https://buildwithangga.com/themes/front/images/logo/logo-color.png" alt="BuildWith Angga" class="w-16 h-16 mb-4">
+            <h3 class="text-lg font-bold text-accent">UX Design Fundamental</h3>
+            <p class="text-gray-400 text-sm">Myskill</p>
+            <p class="text-xs text-gray-500">2025</p>
+        </div>
+
+        <div class="bg-dark rounded-xl p-4 shadow-lg hover:shadow-xl transition">
+            <img src="https://storage.googleapis.com/revou-cdn/image/logo/logo-primary.svg" alt="RevoU" class="w-16 h-16 mb-4">
+            <h3 class="text-lg font-bold text-accent">Front-End Mini Course</h3>
+            <p class="text-gray-400 text-sm">RevoU</p>
+            <p class="text-xs text-gray-500">2024</p>
+        </div>
+        </div>
+    </div>
+    </section>
+
+    <!-- PROGRAMMING LANGUAGES -->
+    <section id="languages" class="bg-darker py-24">
+    <div class="max-w-7xl mx-auto px-6 text-center">
+        <h2 class="text-3xl font-semibold text-white mb-12">Bahasa Pemrograman yang Dipelajari</h2>
+        <div class="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+        
+        <!-- Language Item -->
+        <div class="bg-darker rounded-xl p-6 shadow-lg transform transition duration-300 hover:-translate-y-2 hover:shadow-2xl group">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML" class="w-12 h-12 mx-auto mb-3 opacity-80 group-hover:opacity-100 transition">
+            <p class="text-white font-semibold text-lg">HTML</p>
+        </div>
+
+        <div class="bg-darker rounded-xl p-6 shadow-lg transform transition duration-300 hover:-translate-y-2 hover:shadow-2xl group">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS" class="w-12 h-12 mx-auto mb-3 opacity-80 group-hover:opacity-100 transition">
+            <p class="text-white font-semibold text-lg">CSS</p>
+        </div>
+
+        <div class="bg-darker rounded-xl p-6 shadow-lg transform transition duration-300 hover:-translate-y-2 hover:shadow-2xl group">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript" class="w-12 h-12 mx-auto mb-3 opacity-80 group-hover:opacity-100 transition">
+            <p class="text-white font-semibold text-lg">JavaScript</p>
+        </div>
+
+        <div class="bg-darker rounded-xl p-6 shadow-lg transform transition duration-300 hover:-translate-y-2 hover:shadow-2xl group">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg" alt="PHP" class="w-12 h-12 mx-auto mb-3 opacity-80 group-hover:opacity-100 transition">
+            <p class="text-white font-semibold text-lg">PHP</p>
+        </div>
+
+        <div class="bg-darker rounded-xl p-6 shadow-lg transform transition duration-300 hover:-translate-y-2 hover:shadow-2xl group">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="Java" class="w-12 h-12 mx-auto mb-3 opacity-80 group-hover:opacity-100 transition">
+            <p class="text-white font-semibold text-lg">Java</p>
+        </div>
+
+        <div class="bg-darker rounded-xl p-6 shadow-lg transform transition duration-300 hover:-translate-y-2 hover:shadow-2xl group">
+            <img src="https://raw.githubusercontent.com/PKief/vscode-material-icon-theme/main/icons/laravel.svg" alt="Laravel" class="w-12 h-12 mx-auto mb-3 opacity-80 group-hover:opacity-100 transition">
+            <p class="text-white font-semibold text-lg">Laravel</p>
+        </div>
+
+        <div class="bg-darker rounded-xl p-6 shadow-lg transform transition duration-300 hover:-translate-y-2 hover:shadow-2xl group">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/codeigniter/codeigniter-plain.svg" alt="CodeIgniter" class="w-12 h-12 mx-auto mb-3 opacity-80 group-hover:opacity-100 transition">
+            <p class="text-white font-semibold text-lg">CodeIgniter</p>
+        </div>
+    </div>
+    </section>
+
+  <!-- CTA -->
+  <section id="cta" class="bg-gradient-to-br from-[#1e1b4b] to-[#0f172a] py-24">
+    <div class="max-w-6xl mx-auto px-6 text-center">
+      <h2 class="text-3xl font-bold text-white mb-6 max-w-2xl mx-auto">Interested in working together?</h2>
+      <a href="#contact" class="inline-block px-8 py-3 bg-accent text-white rounded-full font-semibold shadow-lg hover:shadow-xl hover:scale-105 transition">Let’s connect!</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-darker text-center py-6 text-sm text-gray-500">
+    © 2025 Stefan William. All rights reserved.
+  </footer>
+
+  <script>
+    const btn = document.getElementById('seeAllBtn');
+    const grid = document.getElementById('projectGrid');
+    let expanded = false;
+
+    btn.addEventListener('click', () => {
+        expanded = !expanded;
+        grid.classList.toggle('max-h-[1000px]');
+        grid.classList.toggle('max-h-none');
+        btn.textContent = expanded ? 'Show Less' : 'See All';
+    });
+    </script>
+
+</body>
+</html>
